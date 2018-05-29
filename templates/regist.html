@@ -1,0 +1,32 @@
+{% extends'base.html' %}
+{% block title %}register{% endblock %}
+{% block head %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/register.css') }}">
+{% endblock %}
+
+{% block main %}
+   <form action="" method="post">
+   <h3 class="title">register</h3>
+   <div class="form-container">
+
+       <div class="form-group">
+           <input type="text" class="form-control" placeholder="phone number">
+       </div>
+       <div class="form-group">
+           <input type="text" class="form-control" placeholder="username">
+       </div>
+       <div class="form-group">
+           <input type="password" class="form-control" placeholder="password">
+       </div>
+        <div class="form-group">
+           <input type="password" class="form-control" placeholder="password again">
+       </div>
+
+
+       <div class="form-group">
+           <button type="submit" class="btn btn-primary btn-block" >register</button>
+       </div>
+
+   </div>
+   </form>
+{% endblock %}

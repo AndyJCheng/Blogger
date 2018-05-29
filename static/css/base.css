@@ -9,3 +9,11 @@
     font-size: 18px;
     line-height: 20px;
 }
+
+.main{
+    background: azure;
+    width: 730px;
+    margin: auto;
+    overflow: hidden;
+    padding: 10px;
+}
