@@ -1,7 +1,7 @@
 # Blogger
 ## install mysql-8.0.11-winx64  
-   1 download mysql8.0 zip and unzip.  
-   2 create my.int and data folder under mysql.  
+### 1 download mysql8.0 zip and unzip.  
+### 2 create my.int and data folder under mysql.  
      my.ini:  
      [mysqld]  
      # 设置3306端口  
@@ -25,10 +25,10 @@
      # 设置mysql客户端连接服务端时默认使用的端口  
      port=3306  
      default-character-set=utf8  
-   3 mysql --initialize --console,record temporary password.  
+ ### 3 mysql --initialize --console,record temporary password.  
       mysql --install  
       net start mysql  
       ALTER USER "root"@"localhost" IDENTIFIED  BY "你的新密码";  
-   4  change root password authorization way.  
+ ### 4  change root password authorization way.  
       ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY '5032';  
 
