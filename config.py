@@ -10,6 +10,13 @@ import os
 
 DEBUG = True
 SECRET_KEY = os.urandom(24)
-DIALECT = 'sqlite3'
-DATABASE = 'database'
-SQLALCHEMY_DATABASE_URI = "{}:///{}".format(DIALECT, DATABASE)
+DRIVER = 'pymysql'
+DIALECT = 'mysql'
+DATABASE = 'blogger'
+USERNAME = 'root'
+PASSWORD = '5032'
+HOST = '127.0.0.1'
+PORT = '3306'
+# SQLALCHEMY_DATABASE_URI = "{}+{}://{}:{}@{}:{}/{}?charset=utf8".format(DIALECT, DRIVER, USERNAME, PASSWORD, HOST, PORT, DATABASE)
+SQLALCHEMY_DATABASE_URI = "mysql+pymysql://root:5032@127.0.0.1/blogger"
+SQLALCHEMY_TRACK_MODIFICATIONS = False
