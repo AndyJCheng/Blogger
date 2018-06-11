@@ -4,7 +4,7 @@
 ### 2 create my.int and data folder under mysql.  
      my.ini:  
      [mysqld]  
-     # 设置3306端口  
+     # 设置3306端口  ****
      port=3306  
      # 设置mysql的安装目录  
      basedir=D:\mysql-8.0.11-winx64  
