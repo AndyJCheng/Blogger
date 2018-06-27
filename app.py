@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect, url_for
+from flask import Flask, render_template, request, redirect, url_for, session
 from exts import db
 from models import User
 
@@ -18,7 +18,15 @@ def login():
     if request.method == 'GET':
         return render_template('login.html')
     else:
-        pass
+        telephone = request.form.get('telephone')
+        password = request.form.get('password')
+        user = User.query.filter(User.telephone == telephone, User.password == password).first()
+        if user:
+            session['user_id'] = user.id
+            session.permanent = True
+            return redirect(url_for('index'))
+        else:
+            return "your username or password incorrect"
 
 
 @app.route('/register/', methods=['GET', 'POST'])
@@ -43,7 +51,14 @@ def register():
                 return redirect(url_for('login'))
 
 
-
+@app.context_processor
+def my_content():
+    user_id = session.get('user_id')
+    if user_id:
+        user = User.query.filter(User.id == user_id).first()
+        if user:
+            return {"user": user}
+    return {}
 
 
 if __name__ == '__main__':
