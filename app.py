@@ -29,6 +29,14 @@ def login():
             return "your username or password incorrect"
 
 
+@app.route('/question/', methods=['GET', 'POST'])
+def question():
+    if request.method == 'GET':
+        return render_template('question.html')
+    else:
+        pass
+
+
 @app.route('/register/', methods=['GET', 'POST'])
 def register():
     if request.method == 'GET':
